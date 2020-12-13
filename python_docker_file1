@@ -1,0 +1,5 @@
+FROM python:latest
+MAINTAINER Rakesh Example 1
+ADD index.py /src/index.py
+WORKDIR /src
+CMD ["python", "/src/index.py"]

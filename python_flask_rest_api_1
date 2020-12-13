@@ -1,0 +1,29 @@
+#Everytime Creates New Docker Image
+FROM scratch
+
+#Loading Python Environment To Execute
+FROM python:latest
+
+#Owner Of The Docker Image
+MAINTAINER : Rakesh Flask Example 2
+
+#Workdir path for execution
+WORKDIR /src
+
+#Adding executable files to work directory
+ADD Flask_Hello_World.py /src/Flask_Hello_World.py
+
+#Installing required libraries
+RUN pip install flask
+
+
+##Installing Required Libraries - Generally will be mentioned in requirements.txt
+#RUN mkdir -p /src
+#RUN pip install --upgrade pip
+#RUN pip install -r requirements.txt
+#COPY Flask_Hello_World.py /src
+#COPY requirements.txt /src
+
+
+#Run app.py when the container launches
+CMD ["python", "/src/Flask_Hello_World.py"]
